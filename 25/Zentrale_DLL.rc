@@ -1,0 +1,133 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource_Zent.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+// #pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "ZentResource_DLL.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""Zentrale_DEU.rc""  // Deutsch\r\n"
+    "#include ""Zentrale_ENU.rc""   // Englisch\r\n"
+    "\r\n"
+    "#include ""res\\\\Zentrale.rc2""  // non-Microsoft Visual C++ edited resources\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME_          BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_radioknopf_fokus    BITMAP  DISCARDABLE     "res\\Taste_RadioLab_fokus_18.0.bmp"
+IDB_eingaknopf_fokus    BITMAP  DISCARDABLE     "res\\Taste_Einga_fokus_18.0.bmp"
+IDB_radioknopf_oben     BITMAP  DISCARDABLE     "res\\Taste_RadioLab_oben_18.0.bmp"
+IDB_eingaknopf_oben     BITMAP  DISCARDABLE     "res\\Taste_Einga_oben_18.0.bmp"
+IDB_radioknopf_unten    BITMAP  DISCARDABLE     "res\\Taste_RadioLab_unten_18.0.bmp"
+IDB_eingaknopf_unten    BITMAP  DISCARDABLE     "res\\Taste_Einga_unten_18.0.bmp"
+IDB_modelknopf_unten    BITMAP  DISCARDABLE     "res\\Taste_Einga_unten_18.0.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME_          ICON    DISCARDABLE     "res\\pytha.ico"
+IDR_ZENTRATYPE          ICON    DISCARDABLE     "res\\ZentraleDoc.ico"
+IDI_ICON_PYTHA_1        ICON    DISCARDABLE     "res\\Zentrale.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 18,0,2005,6
+ PRODUCTVERSION 18,0,2005,6
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_PYTHA_1      CURSOR  DISCARDABLE     "res\\cursor_pytha1.cur"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "Zentrale_DEU.rc"  // Deutsch
+#include "Zentrale_ENU.rc"   // Englisch
+
+#include "res\\Zentrale.rc2"  // non-Microsoft Visual C++ edited resources
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
