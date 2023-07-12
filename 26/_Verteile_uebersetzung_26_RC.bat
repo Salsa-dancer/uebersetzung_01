@@ -1,5 +1,5 @@
 @echo on
-@:: Verteile_uebersetzung.bat
+@:: 26/Verteile_uebersetzung_26_RC.bat
 @::
 @:: 2020-12 Aufrufen aus erstem Unterverzeichnis im entpackten Weblate ZIP
 @:: 2020-12-22 Fest eingestellter aus .zip entpackter Unterpfad zum einfachen Doppelklick
@@ -17,17 +17,18 @@
 @::=============================================================================
 
 :: Das Unterverzeichnis mit den .rc Dateien:
-@SET Verzeichnis_RC=25
+:: Die .bat liegt nun schon in dem 26 Unterverzeichnis.
+@SET Verzeichnis_RC=.\
 
 : Die Wurzel ohne \ am Ende
-@SET SVN_wurzel=C:\SVN_Workdir\PYTHA.24.2
+@SET SVN_wurzel=C:\SVN_Workdir\PYTHA.26
 
 
 :: Vari-1:   powershell -command "Expand-Archive pytha-25_alles.zip .\pytha-25_alles"
 :: Vari-2:   powershell -command "Expand-Archive pytha-25_alles.zip .\%Verzeichnis_RC%"
 :: Inzwischen entpacke ich per Mausklick die neueste .zip
 
-ECHO Wirklich aus %Verzeichnis_RC% dir .rc nach 24.2 verteilen?
+ECHO Wirklich aus %Verzeichnis_RC% dir .rc nach 26 verteilen?
 PAUSE
 
 
@@ -163,9 +164,19 @@ CALL :Verteile_eine_RC_Datei
 @SET Sprache_Q=th
 CALL :Verteile_eine_RC_Datei
 
-:EOF
+REM   :EOF
+EXIT /b
 
 
+::==============================================================================
+:Umbenenne_eine_Datei
+if exist %1 (
+    @MOVE %1  %2
+::    @RENAME %1  %2
+) else (
+    rem file doesn't exist
+)
+EXIT /b
 
 ::==============================================================================
 :Verteile_eine_RC_Datei
@@ -200,33 +211,50 @@ ECHO Zieldatei:   %Zieldatei%
 @SET Bupdatei19=%Zieldatei%_bup19.rc
 @SET Bupdatei20=%Zieldatei%_bup20.rc
 
-@DEL  %Bupdatei20%
-@MOVE %Bupdatei19%  %Bupdatei20%
-@MOVE %Bupdatei18%  %Bupdatei19%
-@MOVE %Bupdatei17%  %Bupdatei18%
-@MOVE %Bupdatei16%  %Bupdatei17%
-@MOVE %Bupdatei15%  %Bupdatei16%
-@MOVE %Bupdatei14%  %Bupdatei15%
-@MOVE %Bupdatei13%  %Bupdatei14%
-@MOVE %Bupdatei12%  %Bupdatei13%
-@MOVE %Bupdatei11%  %Bupdatei12%
-@MOVE %Bupdatei10%  %Bupdatei11%
-@MOVE %Bupdatei09%  %Bupdatei10%
-@MOVE %Bupdatei08%  %Bupdatei09%
-@MOVE %Bupdatei07%  %Bupdatei08%
-@MOVE %Bupdatei06%  %Bupdatei07%
-@MOVE %Bupdatei05%  %Bupdatei06%
-@MOVE %Bupdatei04%  %Bupdatei05%
-@MOVE %Bupdatei03%  %Bupdatei04%
-@MOVE %Bupdatei02%  %Bupdatei03%
-@MOVE %Bupdatei01%  %Bupdatei02%
 
-MOVE %Zieldatei%    %Bupdatei01%
-COPY %Quelldatei%  %Zieldatei%
+if EXIST %Bupdatei20% (
+   @DEL  %Bupdatei20%
+)
 
+CALL :Umbenenne_eine_Datei %Bupdatei19%  %Bupdatei20%
+CALL :Umbenenne_eine_Datei %Bupdatei18%  %Bupdatei19%
+CALL :Umbenenne_eine_Datei %Bupdatei17%  %Bupdatei18%
+CALL :Umbenenne_eine_Datei %Bupdatei16%  %Bupdatei17%
+CALL :Umbenenne_eine_Datei %Bupdatei15%  %Bupdatei16%
+CALL :Umbenenne_eine_Datei %Bupdatei14%  %Bupdatei15%
+CALL :Umbenenne_eine_Datei %Bupdatei13%  %Bupdatei14%
+CALL :Umbenenne_eine_Datei %Bupdatei12%  %Bupdatei13%
+CALL :Umbenenne_eine_Datei %Bupdatei11%  %Bupdatei12%
+CALL :Umbenenne_eine_Datei %Bupdatei10%  %Bupdatei11%
+CALL :Umbenenne_eine_Datei %Bupdatei09%  %Bupdatei10%
+CALL :Umbenenne_eine_Datei %Bupdatei08%  %Bupdatei09%
+CALL :Umbenenne_eine_Datei %Bupdatei07%  %Bupdatei08%
+CALL :Umbenenne_eine_Datei %Bupdatei06%  %Bupdatei07%
+CALL :Umbenenne_eine_Datei %Bupdatei05%  %Bupdatei06%
+CALL :Umbenenne_eine_Datei %Bupdatei04%  %Bupdatei05%
+CALL :Umbenenne_eine_Datei %Bupdatei03%  %Bupdatei04%
+CALL :Umbenenne_eine_Datei %Bupdatei02%  %Bupdatei03%
+CALL :Umbenenne_eine_Datei %Bupdatei01%  %Bupdatei02%
+
+
+if EXIST %Zieldatei% (
+	::ECHO # MOVE %Zieldatei%    %Bupdatei01%
+	MOVE %Zieldatei%    %Bupdatei01%
+) ELSE (
+	ECHO Datei %Zieldatei% fehlt
+)
+
+
+if EXIST %Quelldatei% (
+	::ECHO # COPY %Quelldatei%  %Zieldatei%
+	COPY %Quelldatei%  %Zieldatei%
+) ELSE (
+	ECHO Datei %Quelldatei% fehlt
+)
 ECHO.
 ::PAUSE
-:EOF
+REM :EOF
+EXIT /B
 
 
 ::==============================================================================
